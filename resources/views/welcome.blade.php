@@ -1,6 +1,13 @@
 <x-layout>
     <div class="space-y-8">
         <section>
+            <h1 class="font-bold text-3xl text-center">Unlock Your Future: Start Your Job Search Now!</h1>
+            <form action=""class="mt-6 flex justify-center">
+                <input type="text" class="rounded-xl border border-white/15 focus:outline-none focus:ring-2 focus:ring-sky-400 px-5 py-4 w-full max-w-xl mx-auto bg-white/5" placeholder="Web Developer ....">
+
+            </form>
+        </section>
+        <section>
             <x-section-heading>Featured Jobs</x-section-heading>
             <div class="grid lg:grid-cols-3 gap-8 md:grid-cols-2 ">
                 <x-job-card />
