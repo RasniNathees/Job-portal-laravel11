@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @Vite(['resources/js/app.js'])
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Job Horizone</title>
 </head>
-<body class="bg-black text-white ">
+<body class="bg-black text-white font-hanken-grotesk ">
     <header class="px-8  item-center py-4 border-b border-white/10">
         <nav class="flex justify-between">
             <div >

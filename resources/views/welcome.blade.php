@@ -27,7 +27,11 @@
         </section>
         <section>
             <x-section-heading>Recent Jobs</x-section-heading>
-          
+            <div>
+                <x-job-card-wide/>
+                <x-job-card-wide/>
+                <x-job-card-wide/>
+            </div>
 
         </section>
     </div>
