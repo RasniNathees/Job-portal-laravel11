@@ -7,7 +7,7 @@
         $class .=" text-2xs rounded-xl px-3 py-1 ";
     
     if($size === 'large')
-        $class .=" text-lg rounded-3xl px-6 py-2 ";
+        $class .=" text-lg rounded-3xl px-6 py-2  justify-center text-center";
     
 
 @endphp
