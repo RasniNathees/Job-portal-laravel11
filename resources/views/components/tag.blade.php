@@ -1,13 +1,13 @@
 @props(['size'])
 
 @php
-    $class ="bg-white/10 rounded-xl hover:bg-white/30 transition-colors duration-[400ms]";
+    $class ="bg-white/10  hover:bg-white/30 transition-colors duration-[400ms]";
     
     if($size === 'small')
-        $class .=" text-2xs  px-4 py-1 ";
+        $class .=" text-2xs rounded-xl px-3 py-1 ";
     
     if($size === 'large')
-        $class .=" text-lg px-6 py-2 ";
+        $class .=" text-lg rounded-3xl px-6 py-2 ";
     
 
 @endphp
