@@ -16,7 +16,9 @@ class JobController extends Controller
     {
         //
         $jobs = Job::latest()->cursorPaginate(5);
-        $tags = Tag::all();
+        $tags = Tag::all()->sortBy(function ($tag) {
+            return str_word_count($tag->name); // Assuming the tag name is stored in the 'name' attribute
+        });
         return view('job.index',['jobs'=> $jobs,'tags'=>$tags]);
     }
 

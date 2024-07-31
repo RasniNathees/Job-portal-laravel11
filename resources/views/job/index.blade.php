@@ -7,12 +7,13 @@
 
             </form>
         </section>
+        
         <section>
             <x-section-heading>Featured Jobs</x-section-heading>
-            <div class="grid lg:grid-cols-3 gap-8 md:grid-cols-2 ">
-               {{-- @foreach ($jobs as $job)
+            <div class="grid lg:grid-cols-3  gap-8 md:grid-cols-2 ">
+               @foreach ($jobs as $job)
                <x-job-card :$job />
-               @endforeach --}}
+               @endforeach
                 
                 
             </div>

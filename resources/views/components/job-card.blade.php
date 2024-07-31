@@ -7,9 +7,9 @@
         <p class="text-sm mt-6">Full Time - From $60,000</p>
     </div>
     <div class="flex justify-between items-center mt-auto">
-        <div>
+        <div class="flex flex-col gap-1">
             @foreach ($job->tags as $tag)
-            <x-tag size="small" :$tag />
+            <x-tag size="small" :$tag/>
             @endforeach
             
           
