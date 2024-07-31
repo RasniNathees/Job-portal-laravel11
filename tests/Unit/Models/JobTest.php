@@ -9,3 +9,9 @@ test('Is Job has employer', function () {
    
    expect($job->employer->is($employer))->toBeTrue();
 });
+
+it("is Job has tag",function(){
+   $job = Job::factory()->create();
+   $job->tag('front end');
+   expect($job->tags)->toHaveCount(1);
+});
