@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreJobRequest;
 use App\Http\Requests\UpdateJobRequest;
 use App\Models\Job;
+use App\Models\Tag;
 
 class JobController extends Controller
 {
@@ -14,6 +15,9 @@ class JobController extends Controller
     public function index()
     {
         //
+        $jobs = Job::latest()->cursorPaginate(5);
+        $tags = Tag::all();
+        return view('job.index',['jobs'=> $jobs,'tags'=>$tags]);
     }
 
     /**

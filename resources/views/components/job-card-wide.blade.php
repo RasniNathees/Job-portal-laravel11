@@ -1,3 +1,4 @@
+@props(['job'])
 <x-card-container>
     <div class="h-full  ">
         <img src="https://picsum.photos/seed/{{rand(1,10000)}}/100/100
@@ -14,9 +15,9 @@
     </div>
     <div class="  ">
         <div>
-            <x-tag size="small">Tag</x-tag>
-            <x-tag size="small">Tag</x-tag>
-            <x-tag size="small">Tag</x-tag>
+            @foreach ($job->tags as $tag)
+            <x-tag size="small" :$tag />
+            @endforeach
         </div>
 
     </div>

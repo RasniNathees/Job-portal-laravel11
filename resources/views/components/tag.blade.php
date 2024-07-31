@@ -1,15 +1,16 @@
-@props(['size'])
+@props(['size','tag'])
 
 @php
-    $class ="bg-white/10  hover:bg-white/30 transition-colors duration-[400ms]";
+        $class = "bg-white/10  hover:bg-white/25 rounded-xl font-bold transition-colors duration-300 whitespace-nowrap";
+                //   bg-white/10 hover:bg-white/25 rounded-xl font-bold transition-colors duration-300 whitespace-nowrap 
     
     if($size === 'small')
-        $class .=" text-2xs rounded-xl px-3 py-1 ";
+        $class .=" px-3 py-1 text-2xs ";
     
     if($size === 'large')
-        $class .=" text-lg rounded-3xl px-6 py-2  justify-center text-center";
+        $class .=" px-2 py-1 text-sm";
     
 
 @endphp
 <a href="#" class="{{$class}}">
-    {{ $slot }}</a>
+  {{$tag->name}}</a>

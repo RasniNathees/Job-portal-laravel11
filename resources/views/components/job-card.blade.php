@@ -1,3 +1,4 @@
+@props(['job'])
 <x-card-container class="flex-col text-center">
 <div class="self-start text-sm">Jobhorizon</div>
 
@@ -7,9 +8,11 @@
     </div>
     <div class="flex justify-between items-center mt-auto">
         <div>
-            <x-tag size="small">Full stack </x-tag>
-            <x-tag size="small">Backend</x-tag>
-            <x-tag size="small">Frontend</x-tag>
+            @foreach ($job->tags as $tag)
+            <x-tag size="small" :$tag />
+            @endforeach
+            
+          
         </div>
         <img src="{{ Vite::asset('resources/images/logo.png') }} "height="60px" width='60px' alt=""
             class=" rounded-2xl">

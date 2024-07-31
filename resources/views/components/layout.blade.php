@@ -27,7 +27,7 @@
             <div class="flex items-center">Post a Job</div>
         </nav>
     </header>
-    <main class=" max-w-[986px] mt-10 px-8 lg:mx-auto">
+    <main class=" max-w-[986px] mt-10 px-8 mx-auto">
         {{$slot}}
     </main>
 </body>
