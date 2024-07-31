@@ -1,10 +1,10 @@
 @props(['job'])
 <x-card-container class="flex-col text-center">
-<div class="self-start text-sm">Jobhorizon</div>
+<div class="self-start text-sm">{{$job->employer->name}}</div>
 
     <div class=" py-4 mt-2 px-4"  >
-        <h3 class="group-hover:text-sky-800 font-bold text-xl  transition-colors duration-500">Full stack Laravel Developer</h3>
-        <p class="text-sm mt-6">Full Time - From $60,000</p>
+        <h3 class="group-hover:text-sky-800 font-bold text-xl  transition-colors duration-500">{{$job->title}}</h3>
+        <p class="text-sm mt-6">{{$job->schedule}} - From ${{number_format($job->salary,2)}}</p>
     </div>
     <div class="flex justify-between items-center mt-auto">
         <div class="flex flex-col gap-1">

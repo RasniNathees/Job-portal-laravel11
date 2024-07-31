@@ -17,12 +17,14 @@ class JobFactory extends Factory
      */
     public function definition(): array
     {
+        $shedule = ['Full Time','Part Time'];
+        $location = ['Remote','Onsite','Hybrid'];
         return [
             //
             'title'=>fake()->jobTitle(),
             'salary'=>mt_rand(20000000,40000000)/100,
-            'location'=>array_rand(['Remote','Onsite','Hybrid']),
-            'schedule'=>array_rand(['Full Time','Part Time']),
+            'location'=>$location[array_rand( $location )],
+            'schedule'=>$shedule[array_rand($shedule)],
             'url'=> fake()->url(),
             'featured'=>(bool)mt_rand(0,1),
             'employer_id'=>Employer::factory()->create()
