@@ -4,6 +4,6 @@ use App\Models\User;
 
 it('User can logout',function(){
     $user =User::factory()->create();
-    expect()->toBeRedirectFor('/logout','post');
+    expect($user)->toBeRedirectFor('/logout','post');
     
 });

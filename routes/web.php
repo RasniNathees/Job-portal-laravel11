@@ -16,9 +16,10 @@ Route::controller(RegisterdController::class)->group(function(){
 }
 );
 Route::controller(SessionController::class)->group(function(){
-    Route::get('/login','create');
+    Route::get('/login','create')->name('Login');
     Route::post('/login','store');
+    Route::post('/logout','destroy')->middleware('auth');
+
 }
 );
-
 

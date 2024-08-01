@@ -34,7 +34,15 @@
             @auth
             <div class="flex space-x-6 items-center">
                 <a href="/">Post a Job</a>
-                <a href="/">Logout</a>
+                <form action="/logout" method="POST">
+                @csrf
+                @method('post')
+                <x-form.button>Logout</x-form.button>
+               
+                </form>
+               
+               
+                
             </div>
             @endauth
             
