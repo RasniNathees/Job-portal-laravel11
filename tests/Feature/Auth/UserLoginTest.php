@@ -58,8 +58,5 @@ it('User can login and redirected to home page', function () {
 });
 
 it('Redirect to home page if he already logged in',function(){
-    $user = User::factory()->create();
-    $this->actingAs($user)
-    ->get('/login')
-    ->assertStatus(302);
+    expect(User::factory()->create())->toBeRedirectFor('/login');
 });

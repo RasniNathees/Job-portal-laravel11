@@ -102,3 +102,7 @@ it('Create user and submit', function () {
     ]);
     $this->assertAuthenticatedAs(User::where('email',$userData['email'])->first());
 });
+
+it('Redirect to home page if he already logged in',function(){
+    expect(User::factory()->create())->toBeRedirectFor('/register');
+});
