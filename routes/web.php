@@ -12,7 +12,7 @@ Route::controller(JobController::class)->group(function(){
 );
 Route::controller(RegisterdController::class)->group(function(){
     Route::get('/register','create');
-    Route::post('/user','store');
+    Route::post('/register','store');
 }
 );
 Route::controller(SessionController::class)->group(function(){
