@@ -23,6 +23,7 @@ class SessionController extends Controller
     public function create()
     {
         //
+        if(!Auth::guest()) return redirect('/');
         return view('auth.login');
     }
 
