@@ -1,8 +1,7 @@
 <?php
-use App\Models\Employer;
 use App\Models\Job;
 use App\Models\Tag;
-
+use App\Models\User;
 
 it('Return successful response', function () {
     $response = $this->get('/');
@@ -41,5 +40,16 @@ it('Is job have a 3 or less tags', function () {
          return  $viewJobs->first()->tags->count() <= 3; 
     });
 
+});
+
+it('Acting as a user', function(){
+    $user = User::factory()->create();
+
+    $this->actingAs($user)
+    ->get('/')
+    ->assertDontsee('Login')
+    ->assertDontsee('Register')
+    ->assertsee('Post a Job')
+    ->assertsee('Logout');
 });
 
