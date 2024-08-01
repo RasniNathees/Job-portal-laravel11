@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisterdController;
+use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -14,4 +15,10 @@ Route::controller(RegisterdController::class)->group(function(){
     Route::post('/user','store');
 }
 );
+Route::controller(SessionController::class)->group(function(){
+    Route::get('/login','create');
+    Route::post('/login','store');
+}
+);
+
 

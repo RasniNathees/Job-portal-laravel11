@@ -7,22 +7,11 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
-
-
+use Illuminate\Support\Facades\Auth;
 
 class RegisterdController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
+  
     public function create()
     {
         //
@@ -35,40 +24,10 @@ class RegisterdController extends Controller
     public function store(StoreUserRequest $request)
     {
         //
-        User::create($request->all());
+       $user = User::create($request->all());
+     
+        Auth::login($user);
         return redirect('/');
 
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 }

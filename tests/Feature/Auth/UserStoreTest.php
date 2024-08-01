@@ -11,6 +11,6 @@ it('create user', function () {
     $response = Laravel\post('/user', $user);
 
     $response->assertStatus(302);
-    $response = Laravel\followingRedirects($response);
-    $response->assert;
+   
+    
 });

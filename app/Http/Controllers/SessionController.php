@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class SessionController extends Controller
 {
@@ -20,6 +22,7 @@ class SessionController extends Controller
     public function create()
     {
         //
+        return view('auth.login');
     }
 
     /**
@@ -28,6 +31,14 @@ class SessionController extends Controller
     public function store(Request $request)
     {
         //
+        if(!Auth::attempt($request->only('email','password'))){
+           
+           throw ValidationException::withMessages([
+            'password'=> 'User creedential is invalid'
+           ]);
+        }
+        $request->session()->regenerate();
+        return redirect('/');
     }
 
     /**
