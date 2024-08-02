@@ -15,14 +15,15 @@ class JobController extends Controller
     public function index()
     {
         //
-        // $jobs = Job::with('employer','tags')->latest()->cursorPaginate(5);
+        $jobs = Job::with('employer', 'tags')
+        ->latest()
+        ->cursorPaginate(10);
+       
+        $futuredJobs = Job::with('employer', 'tags')
+        ->latest()
+            ->where('featured', 1)->cursorPaginate(6);
         $tags = Tag::all();
-        $jobs = Job::find(1);
-        
-    
-        $jobs = Job::with('employer','tags')->latest()->cursorPaginate(5);
-
-        return view('job.index', ['jobs' => $jobs, 'tags' => $tags]);
+        return view('job.index', ['jobs' => $jobs, 'tags' => $tags, 'futuredJobs' => $futuredJobs]);
     }
 
     /**
