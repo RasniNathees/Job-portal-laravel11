@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@200;600&display=swap"
         rel="stylesheet">
     <title>Job Horizone</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body class="bg-gradient-to-l from-black to-slate-800 text-white font-hanken-grotesk ">
