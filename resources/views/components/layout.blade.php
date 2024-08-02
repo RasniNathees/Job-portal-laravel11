@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@200;600&display=swap" rel="stylesheet">
     <title>Job Horizone</title>
 </head>
-<body class="bg-gradient-to-t from-gray-900 to-slate-800 text-white font-hanken-grotesk ">
+<body class="bg-gradient-to-l from-black to-slate-800 text-white font-hanken-grotesk ">
     <header class="px-4 sm:px-8 py-4 border-b border-white/10">
         <nav class="flex flex-col sm:flex-row items-center justify-between">
             <div class="flex items-center mb-4 sm:mb-0">
@@ -18,7 +18,7 @@
                     <img src="{{ Vite::asset('resources/images/logo.png') }}" height="50px" width="80px" alt="horizone-job-logo">
                 </a>
             </div>
-            <div class="hidden  flex-col sm:flex-row items-center mb-4 sm:mb-0 space-y-4 sm:space-y-0 sm:space-x-6 font-bold">
+            <div class="   flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <a href="/" class="block">Jobs</a>
                 <a href="/" class="block">Careers</a>
                 <a href="/" class="block">Salary</a>
@@ -34,11 +34,9 @@
             @auth
             <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <a href="/" class="block">Post a Job</a>
-                <form action="/logout" method="POST" class="flex flex-col sm:flex-row items-center">
-                    @csrf
-                    @method('post')
+                <x-form.form action="/logout" method="POST" class="flex flex-col sm:flex-row items-center">
                     <x-form.button class="mt-2 sm:mt-0">Logout</x-form.button>
-                </form>
+                </x-form.form>
             </div>
             @endauth
         </nav>

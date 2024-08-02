@@ -2,10 +2,10 @@
     <div class="space-y-8">
         <section>
             <h1 class="font-bold text-3xl text-center">Unlock Your Future: Start Your Job Search Now!</h1>
-            <form action=""class="mt-6 flex justify-center">
-                <input type="text" class="rounded-xl border border-white/15 focus:outline-none focus:ring-2 focus:ring-sky-400 px-5 py-4 w-full max-w-xl mx-auto bg-white/5" placeholder="Web Developer ....">
-
-            </form>
+           
+            <x-form.form action="/search" method="GET" class="mt-6 flex justify-center">
+                <input type="text" name ='search' class="rounded-xl border border-white/15 focus:outline-none focus:ring-2 focus:ring-sky-400 px-5 py-4 w-full max-w-xl mx-auto bg-white/5" placeholder="Web Developer ....">
+            </x-form.form>
         </section>
         
         <section>
