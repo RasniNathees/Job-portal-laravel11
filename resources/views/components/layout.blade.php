@@ -26,8 +26,8 @@
             </div>
             @guest
             <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <a href="/" class="block">Login</a>
-                <a href="/" class="block">Register</a>
+                <a href="/login" class="block">Login</a>
+                <a href="/register" class="block">Register</a>
             </div>
             @endguest
     
