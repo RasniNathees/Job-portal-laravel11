@@ -42,30 +42,31 @@
                     {{-- profile --}}
                     <div class="flex justify-center items-center   space-x-4">
 
-                        <div
+                        <div id="ref"
                             class="border-[2.2px] border-black transition duration-300 hover:border-blue-700  rounded-full ">
-                            <img id="profile" src="https://picsum.photos/seed/picsum/40" alt="" class="rounded-3xl">
+                            <img id="profile" src="https://picsum.photos/seed/picsum/40" alt=""
+                                class="rounded-3xl">
                         </div>
-                     
-                        
-                            <div id="dropdown" class="hidden flex-col   ">
 
-                                <div class=" w-full  sm:px-4 sm:py-2 sm:mt-6 ">
-                                    <x-profile-dropdown-container>
-                                        <span>{{ Auth::user()->name }}</span>
-                                        <span>{{ Auth::user()->email }}</span>
-                                    </x-profile-dropdown-container>
-                                    <x-profile-dropdown-container>
-                                        <span>Create Organization</span>
-                                    </x-profile-dropdown-container>
-                                    <x-profile-dropdown-container>
-                                        <span id="logout">Logout</span>
-                                    </x-profile-dropdown-container>
-                                  
-                                    
-                                </div>
+
+                        <div id="dropdown" class="hidden flex-col   ">
+
+                            <div class=" w-full  sm:px-4 sm:py-2 sm:mt-6 ">
+                                <x-profile-dropdown-container>
+                                    <span>{{ Auth::user()->name }}</span>
+                                    <span>{{ Auth::user()->email }}</span>
+                                </x-profile-dropdown-container>
+                                <x-profile-dropdown-container>
+                                    <span>Create Organization</span>
+                                </x-profile-dropdown-container>
+                                <x-profile-dropdown-container>
+                                    <span id="logout">Logout</span>
+                                </x-profile-dropdown-container>
+
+
                             </div>
-                        
+                        </div>
+
                     </div>
 
                     {{-- <x-form.form action="/logout" method="POST" class="flex flex-col sm:flex-row items-center">
