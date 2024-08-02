@@ -48,3 +48,15 @@ it('can detach a tag from a job', function () {
    $job->tags()->detach($tag);
    expect($job->tags->contains($tag->id))->toBeFalse();
 });
+
+it('can add a tag by name', function () {
+   $job = Job::factory()->create();
+ 
+
+   $job->tag('Laravel');
+
+   $tag = Tag::where('name', 'Laravel')->first();
+
+   expect($job->tags->pluck('name')->contains($tag->name))->toBeTrue();
+   $this->assertDatabaseHas('tags', ['name' => 'Laravel']);
+});
