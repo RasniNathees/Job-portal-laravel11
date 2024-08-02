@@ -17,11 +17,11 @@ class JobController extends Controller
         //
         $jobs = Job::with('employer', 'tags')
         ->latest()
-        ->cursorPaginate(10);
+        ->paginate(10);
        
         $futuredJobs = Job::with('employer', 'tags')
         ->latest()
-            ->where('featured', 1)->cursorPaginate(6);
+            ->where('featured', 1)->orderByDesc('id')->take(3)->get();
         $tags = Tag::all();
         return view('job.index', ['jobs' => $jobs, 'tags' => $tags, 'futuredJobs' => $futuredJobs]);
     }

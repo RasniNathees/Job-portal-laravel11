@@ -12,5 +12,5 @@
     
 
 @endphp
-<a href="#" class="{{$class}}">
+<a href="/search?search={{$tag->name}}" class="{{$class}}">
   {{$tag->name}}</a>

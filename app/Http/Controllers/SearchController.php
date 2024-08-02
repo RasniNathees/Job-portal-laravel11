@@ -9,8 +9,13 @@ class SearchController extends Controller
 {
     //
     public function __invoke(){
-       
-        $jobs =Job::where('title', 'LIKE', '%'.request('search').'%')->get();
+        $search  = request('search');
+        $jobs =Job::with('employer','tags')->
+        where('title', 'LIKE', '%'.request('search').'%') 
+        ->orWhereHas('tags', function ($query) use ($search) {
+            $query->where('name', 'LIKE', '%' . $search . '%');
+        })
+        ->paginate(10);
        
         return view('results',['jobs'=>$jobs]);
     }

@@ -28,8 +28,7 @@
                 <x-tag size='large' :$tag/>
               
                 @endforeach
-               
-               </div>
+              
             
                
 
@@ -41,9 +40,14 @@
                 <x-job-card-wide :$job/>
                 @endforeach
                 
-                
+              
+            </div>
             </div>
 
         </section>
+    </div>
+    <div class="p-4">
+       
+        {{ $jobs->links() }}
     </div>
 </x-layout>
