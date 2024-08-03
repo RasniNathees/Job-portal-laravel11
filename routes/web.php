@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployerController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisterdController;
 use App\Http\Controllers\SearchController;
@@ -24,3 +25,7 @@ Route::controller(SessionController::class)->group(function(){
 }
 );
 
+Route::controller(EmployerController::class)->group(function(){
+    Route::get('/organization','create');
+    Route::post('/organization','store');
+});

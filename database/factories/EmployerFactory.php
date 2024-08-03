@@ -20,7 +20,12 @@ class EmployerFactory extends Factory
         return [
             //
             'name'=>fake()->company(),
-
+         
+            'email'=>fake()->email(),
+            'phone'=>fake()->phoneNumber(),
+            'address'=>fake()->streetAddress(),
+            'city'=>fake()->city(),
+            'website'=>fake()->url(),
             'logo'=>fake()->imageUrl(),
             'user_id'=>User::factory()->create()
         ];
