@@ -31,7 +31,7 @@ class EmployerController extends Controller
     public function store(StoreEmployerRequest $request)
     {
         //
-        dd($request->file());
+       
     }
 
     /**
