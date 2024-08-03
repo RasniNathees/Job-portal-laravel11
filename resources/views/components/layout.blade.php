@@ -16,23 +16,28 @@
 
 <body class="bg-gradient-to-l from-black to-slate-800 text-white font-hanken-grotesk ">
     <header class="px-4 sm:px-8  border-b border-white/10">
-        <nav class="flex flex-col sm:flex-row items-center justify-between">
+        <nav class="flex flex-col sm:flex-row items-center  justify-between">
             <div class="flex items-center mb-4 sm:mb-0">
                 <a href="/">
                     <img src="{{ Vite::asset('resources/images/logo.png') }}" height="50px" width="80px"
                         alt="horizone-job-logo">
                 </a>
             </div>
-            {{-- <div class="   flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+            <div class=" flex flex-col items-start justify-center sm:flex-row sm:space-x-6 sm:ml-60  ">
                 <a href="/" class="block">Jobs</a>
                 <a href="/" class="block">Careers</a>
                 <a href="/" class="block">Salary</a>
                 <a href="/" class="block">Companies</a>
-            </div> --}}
+            </div>
             @guest
-                <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+
+                <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-8 mx-20">
+
                     <x-link-button href='/login'>Login</x-link-button>
-                    <x-link-button href='/register'>Register</x-link-button>
+                    {{-- profile --}}
+                    <div class="flex justify-center items-center   space-x-4">
+                        <x-link-button href='/register'>Register</x-link-button>
+                    </div>
                 </div>
             @endguest
 
@@ -46,7 +51,7 @@
                         <div id="ref"
                             class="border-[2.2px] border-black transition duration-300 hover:border-blue-700  rounded-full ">
                             <img id="profile" src="https://picsum.photos/seed/picsum/40" alt=""
-                                class="rounded-3xl">
+                                class="hover:cursor-pointer rounded-3xl">
                         </div>
 
 
@@ -86,4 +91,5 @@
         {{ $slot }}
     </main>
 </body>
+
 </html>

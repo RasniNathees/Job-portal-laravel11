@@ -12,6 +12,12 @@ class Employer extends Model
     use HasFactory;
     protected $fillable = [
         'name',
+        'email',
+        'phone',
+        'address',
+        'city',
+        'state',
+        'website',
         'logo'
     ];
     public function user():BelongsTo{

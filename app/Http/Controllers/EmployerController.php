@@ -22,6 +22,7 @@ class EmployerController extends Controller
     public function create()
     {
         //
+        return view('employer.create');
     }
 
     /**
@@ -30,6 +31,7 @@ class EmployerController extends Controller
     public function store(StoreEmployerRequest $request)
     {
         //
+        dd($request->file());
     }
 
     /**
