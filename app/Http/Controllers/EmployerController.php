@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEmployerRequest;
 use App\Http\Requests\UpdateEmployerRequest;
 use App\Models\Employer;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EmployerController extends Controller
 {
@@ -22,6 +24,9 @@ class EmployerController extends Controller
     public function create()
     {
         //
+        if(Auth::user()->employer){
+            return redirect('/');
+        }
         return view('employer.create');
     }
 
@@ -31,7 +36,15 @@ class EmployerController extends Controller
     public function store(StoreEmployerRequest $request)
     {
         //
+     
+        $fields = $request->all();
+        $user = Auth::user();
+        $logopath = $request->logo->store('logos');
+        $fields['logo'] = $logopath;
+      
+    $user->employer()->create($fields);
        
+        return redirect('/');
     }
 
     /**

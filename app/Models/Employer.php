@@ -16,7 +16,6 @@ class Employer extends Model
         'phone',
         'address',
         'city',
-        'state',
         'website',
         'logo'
     ];

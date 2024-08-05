@@ -28,7 +28,7 @@ class RegisterdController extends Controller
        $user = User::create($request->all());
      
         Auth::login($user);
-        return redirect('/');
+        return redirect('/organization');
 
     }
 }

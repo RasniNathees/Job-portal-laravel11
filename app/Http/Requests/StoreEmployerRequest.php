@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-
+use Illuminate\Validation\Rules\File;
 class StoreEmployerRequest extends FormRequest
 {
     /**
@@ -22,7 +22,14 @@ class StoreEmployerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            // 
+        'name' =>'required',
+        'email' =>'required|email',
+        'phone' => 'required',
+        'address' => 'required',
+        'city' => 'required',
+        'logo' => ['required',File::types(['png', 'jpg', 'webp'])]
+  
         ];
     }
 }

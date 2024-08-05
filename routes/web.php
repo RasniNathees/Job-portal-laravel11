@@ -28,4 +28,4 @@ Route::controller(SessionController::class)->group(function(){
 Route::controller(EmployerController::class)->group(function(){
     Route::get('/organization','create');
     Route::post('/organization','store');
-});
+})->middleware('auth');

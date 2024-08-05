@@ -3,7 +3,7 @@
         <x-form.form method="post" action="/organization" class="mt-6  flex flex-col items-center" enctype="multipart/form-data">
             <x-form.field label='Organization Name' name='name' width='w-4/6' />
             <x-form.field label='Email' name='email' width='w-4/6' />
-            <x-form.field label='Phone Number' name='phpne' width='w-4/6' />
+            <x-form.field label='Phone Number' name='phone' width='w-4/6' />
             <x-form.field label='Address' name='address' width='w-4/6' />
 
             <x-form.field label='City' name='city' width='w-4/6' />

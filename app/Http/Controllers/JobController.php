@@ -6,6 +6,7 @@ use App\Http\Requests\StoreJobRequest;
 use App\Http\Requests\UpdateJobRequest;
 use App\Models\Job;
 use App\Models\Tag;
+use Illuminate\Support\Facades\Auth;
 
 class JobController extends Controller
 {
@@ -13,7 +14,12 @@ class JobController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
+    { 
+        if(!Auth::guest()){
+            if(!Auth::user()->employer){
+                return redirect('/organization');
+            }
+        }
         //
         $jobs = Job::with('employer', 'tags')
         ->latest()

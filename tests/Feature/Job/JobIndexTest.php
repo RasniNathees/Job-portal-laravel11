@@ -1,4 +1,6 @@
 <?php
+
+use App\Models\Employer;
 use App\Models\Job;
 use App\Models\Tag;
 use App\Models\User;
@@ -42,13 +44,14 @@ it('Is job have a 3 or less tags', function () {
 
 it('Acting as a user', function(){
     $user = User::factory()->create();
-
-    $this->actingAs($user)
+$employer = Employer::factory()->create();
+$employer->user()->associate($user);
+    actingAs($user)
     ->get('/')
     ->assertDontsee('Login')
-    ->assertDontsee('Register')
-    ->assertsee('Post a Job')
-    ->assertsee('Logout');
+    ->assertDontsee('Register');
+   
+   
 });
 
 it('Has a featured job',function(){

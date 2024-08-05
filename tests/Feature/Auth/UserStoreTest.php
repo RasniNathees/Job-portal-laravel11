@@ -95,7 +95,7 @@ it('Create user and submit', function () {
     ];
 
     $this->post('/register', $userData)
-        ->assertRedirect('/');
+        ->assertRedirect('/organization');
     $this->assertAuthenticated();
     $this->assertDatabaseHas('users', [
         'email' => $userData['email'],
