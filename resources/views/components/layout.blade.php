@@ -63,7 +63,7 @@
                                     <span>{{ Auth::user()->email }}</span>
                                 </x-profile-dropdown-container>
                                 <x-profile-dropdown-container>
-                                    <span>Create Organization</span>
+                                    <span>Settings</span>
                                 </x-profile-dropdown-container>
                                 <x-profile-dropdown-container>
                                     <span id="logout">Logout</span>

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('search',SearchController::class);
 Route::controller(JobController::class)->group(function(){
-    Route::get('/','index');
+    Route::get('/','index')->middleware('auth');
 }
 );
 Route::controller(RegisterdController::class)->group(function(){
@@ -18,7 +18,7 @@ Route::controller(RegisterdController::class)->group(function(){
 }
 );
 Route::controller(SessionController::class)->group(function(){
-    Route::get('/login','create')->name('Login');
+    Route::get('/login','create')->name('login');
     Route::post('/login','store');
     Route::post('/logout','destroy')->middleware('auth');
 
@@ -26,6 +26,6 @@ Route::controller(SessionController::class)->group(function(){
 );
 
 Route::controller(EmployerController::class)->group(function(){
-    Route::get('/organization','create');
-    Route::post('/organization','store');
-})->middleware('auth');
+    Route::get('/organization','create')->middleware('auth');
+    Route::post('/organization','store')->middleware('auth');
+});
