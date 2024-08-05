@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('search',SearchController::class);
 Route::controller(JobController::class)->group(function(){
-    Route::get('/','index')->middleware('auth');
+    Route::get('/','index');
 }
 );
 Route::controller(RegisterdController::class)->group(function(){

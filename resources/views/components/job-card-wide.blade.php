@@ -16,7 +16,7 @@
     <div class="  ">
         <div>
             @foreach ($job->tags as $tag)
-            {{-- <x-tag size="small" :$tag /> --}}
+            <x-tag size="small" :$tag />
             @endforeach
         </div>
 
